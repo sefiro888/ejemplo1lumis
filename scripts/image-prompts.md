@@ -86,3 +86,7 @@ Ediciones de las fotografías individuales, manteniendo encuadre, composición, 
 AFTER: Remove only the gloved hand, forearm and squeegee, and remove all water droplets, soap and smears from the glass so it is entirely clean, clear and dry. Keep the exact window frame, balcony, city view, architecture, plants, camera angle, crop and sunlight unchanged.
 
 BEFORE: Change only the glass in the large left pane, adding a moderate realistic translucent dusty haze and light dried rain water streaks. Everything behind the glass and all window framing must stay aligned: same camera crop, scene, objects, lighting and colors. No people, tools, new objects, damage or extreme grime.
+# Hero humano (dirección editorial v4)
+
+Fotografía editorial realista para la portada de una empresa de limpieza de Zaragoza: manos humanas anatómicamente correctas, con guantes azules, limpiando con un paño de microfibra un ventanal de una vivienda luminosa y habitada. Vista urbana española desenfocada al otro lado del cristal, luz cálida de mañana, textura natural y encuadre horizontal 3:2. Mostrar solo parte de la persona, sin rostro. Sin textos, marcas, logotipos ni marcas de agua. Resultado profesional y cercano, con tonos crema, azul marino y celeste. Ejemplo visual ilustrativo, no fotografía de un trabajo real de Lumis.
+

@@ -43,3 +43,12 @@ El sitio publicado no necesita Node, npm ni dependencias de JavaScript externas.
 Estilos e interacciones adicionales: `assets/css/experience.css` y `assets/js/experience.js`. Para reconstruir esta capa después de `scripts/redesign.mjs`, ejecutar `node scripts/enhance.cjs` con las dependencias de desarrollo indicadas arriba.
 
 Comprobaciones adicionales: `node scripts/verify-experience.cjs`. Informe: `scripts/experience-verification.json`. Son comprobaciones de DOM y lógica, no una validación visual en navegador.
+
+## Dirección editorial (versión 4)
+
+- Portada con un titular más directo, nueva fotografía humana de limpieza, tres puntos de orientación y una composición con mayor contraste y jerarquía.
+- Tipografía más legible, fotografías de mayor presencia, tarjetas menos densas y una navegación más clara en escritorio y móvil.
+- Las 16 páginas de servicio tienen una introducción propia y un bloque de consulta específico para el espacio, con acceso al mensaje de WhatsApp correspondiente.
+- La nueva fotografía `assets/images/hero-humano.jpg` fue generada con la herramienta integrada image_gen como ejemplo visual ilustrativo. Prompt: fotografía editorial realista de manos con guantes limpiando un ventanal de una vivienda luminosa de Zaragoza, sin texto, logotipo ni marca de agua. Hay una versión de 640 px para móvil.
+
+Estilos: `assets/css/art-direction.css`. Para volver a aplicar los cambios de contenido después de regenerar las páginas, ejecutar `node scripts/art-direct.cjs` después de `node scripts/enhance.cjs`.
