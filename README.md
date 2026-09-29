@@ -1,54 +1,26 @@
-# Limpiezas Lumis — web de demostración
+# Limpiezas Lumis — demostración web
 
-La portada está en `index.html`. El sitio incluye 16 páginas de servicio independientes, rutas relativas y recursos locales; se puede abrir directamente o publicar la carpeta en GitHub Pages.
+Web estática de Limpiezas Lumis en Zaragoza. La portada y las 16 páginas de servicio se generan con `scripts/build-v5.cjs` a partir del contenido específico de `scripts/content-v5.cjs`. Cada servicio tiene una página HTML independiente.
 
-## Rediseño visual
+## Versión actual
 
-- Portada luminosa, nueva composición, azul Lumis, blanco cálido y acentos celestes y lima.
-- Navegación fotográfica agrupada en hogar, exteriores, espacios profesionales y superficies.
-- Catálogo filtrable, menú móvil, contacto contextual por WhatsApp y siete comparadores (portada y seis servicios).
-- Fotografías individuales de 1536 × 1024 px; variantes de 640 px para cargas pequeñas. Los antiguos recortes de 378 × 250 px han sido sustituidos.
-- Tipografías Manrope e Instrument Serif alojadas localmente. Licencias en `assets/fonts/`.
-- El logotipo original se conserva sin cambiar proporciones ni colores.
+- Diseño editorial responsive con navegación por cuatro tipos de espacio, buscador de servicios, fotografías locales y contacto guiado por WhatsApp.
+- Páginas de servicio con situaciones orientativas, información útil para consultar presupuesto, consejos prudentes, preguntas frecuentes propias, galería y servicios relacionados.
+- Siete comparativas ilustrativas con control por ratón, tacto y teclado: una en la portada y seis en páginas de servicio.
+- Tipografías alojadas localmente y logotipo original conservado.
+- Imágenes optimizadas de 1536 × 1024 px y variantes de 640 px. Las escenas generadas son ilustrativas y no muestran trabajos reales de Lumis.
+- Los servicios de tapicerías y sofás necesitan confirmación de disponibilidad por parte de Lumis. No se anuncian horarios, precios, métodos, maquinaria, garantías ni reseñas no confirmadas.
 
-Estilos: `assets/css/styles.css`. Interacciones: `assets/js/main.js`.
+Archivos activos: `assets/css/site.css`, `assets/js/site.js`, `scripts/content-v5.cjs` y `scripts/build-v5.cjs`. Los archivos de estilos y scripts de versiones anteriores permanecen como historial de desarrollo y no se cargan en las páginas actuales.
 
-## Imágenes y revisión comercial
+## Reconstruir y comprobar
 
-Todas las fotografías son ejemplos visuales ilustrativos generados con image_gen. No son trabajos reales de Lumis. Los prompts están en `scripts/image-prompts.md`.
+```powershell
+node scripts/build-v5.cjs
+node scripts/verify-v5.cjs
+```
 
-Antes de publicar como oferta definitiva, confirmar con Lumis los servicios de tapicerías y sofás. Sus páginas contienen comentarios de revisión y preguntas frecuentes que indican que debe consultarse la disponibilidad. Los métodos, productos, horarios, precios y alcance deben acordarse con la empresa; no se han añadido datos comerciales no confirmados.
+La verificación comprueba rutas e imágenes locales, estructura de las 17 páginas, sintaxis CSS y JavaScript, y lógica del menú, buscador, consulta y comparador en un DOM aislado. No sustituye una revisión visual en navegador ni una prueba en dispositivos físicos.
 
-## Comprobaciones realizadas
+Para ejecutar la verificación se necesita `jsdom` y `css-tree` en `scripts/.qa/node_modules`. El sitio publicado no necesita Node ni dependencias externas de JavaScript.
 
-Se revisaron las 17 páginas, archivos y enlaces relativos, títulos, navegación, mensajes de WhatsApp y CSS. Se probaron en un DOM aislado el estado del menú para escritorio y móvil, las cinco categorías de filtrado y los manejadores de los siete comparadores. Informe: `scripts/verification.json`.
-
-La apertura `file://` en la herramienta de navegador fue bloqueada; estas comprobaciones no sustituyen una revisión visual en un navegador real ni una prueba física con pantalla táctil.
-
-Para repetir las comprobaciones de desarrollo:
-
-    npm install --prefix scripts/.qa --no-save --no-package-lock --ignore-scripts jsdom postcss
-    node scripts/verify.cjs
-
-El sitio publicado no necesita Node, npm ni dependencias de JavaScript externas.
-
-## Experiencia visual e interacciones (versión 3)
-
-- Portada con tres escenas seleccionables: hogar, negocio y exterior. Cambian cada 7,2 segundos y se pueden pausar; se detienen al interactuar, quedar fuera de pantalla o activar movimiento reducido.
-- Composición de bloques visuales, tarjetas escalonadas, detalles de color, animaciones suaves e indicador de avance de lectura.
-- Consulta guiada en la portada: selección de espacio y servicio, zona y tamaño opcionales, vista previa y enlace a WhatsApp con mensaje preparado. No envía mensajes por sí sola.
-- Galerías ampliables con navegación por teclado, cierre con Escape y restauración del foco.
-- Navegación interna fija en las 16 páginas de servicio.
-
-Estilos e interacciones adicionales: `assets/css/experience.css` y `assets/js/experience.js`. Para reconstruir esta capa después de `scripts/redesign.mjs`, ejecutar `node scripts/enhance.cjs` con las dependencias de desarrollo indicadas arriba.
-
-Comprobaciones adicionales: `node scripts/verify-experience.cjs`. Informe: `scripts/experience-verification.json`. Son comprobaciones de DOM y lógica, no una validación visual en navegador.
-
-## Dirección editorial (versión 4)
-
-- Portada con un titular más directo, nueva fotografía humana de limpieza, tres puntos de orientación y una composición con mayor contraste y jerarquía.
-- Tipografía más legible, fotografías de mayor presencia, tarjetas menos densas y una navegación más clara en escritorio y móvil.
-- Las 16 páginas de servicio tienen una introducción propia y un bloque de consulta específico para el espacio, con acceso al mensaje de WhatsApp correspondiente.
-- La nueva fotografía `assets/images/hero-humano.jpg` fue generada con la herramienta integrada image_gen como ejemplo visual ilustrativo. Prompt: fotografía editorial realista de manos con guantes limpiando un ventanal de una vivienda luminosa de Zaragoza, sin texto, logotipo ni marca de agua. Hay una versión de 640 px para móvil.
-
-Estilos: `assets/css/art-direction.css`. Para volver a aplicar los cambios de contenido después de regenerar las páginas, ejecutar `node scripts/art-direct.cjs` después de `node scripts/enhance.cjs`.

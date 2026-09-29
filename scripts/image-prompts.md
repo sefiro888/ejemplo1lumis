@@ -90,3 +90,4 @@ BEFORE: Change only the glass in the large left pane, adding a moderate realisti
 
 Fotografía editorial realista para la portada de una empresa de limpieza de Zaragoza: manos humanas anatómicamente correctas, con guantes azules, limpiando con un paño de microfibra un ventanal de una vivienda luminosa y habitada. Vista urbana española desenfocada al otro lado del cristal, luz cálida de mañana, textura natural y encuadre horizontal 3:2. Mostrar solo parte de la persona, sin rostro. Sin textos, marcas, logotipos ni marcas de agua. Resultado profesional y cercano, con tonos crema, azul marino y celeste. Ejemplo visual ilustrativo, no fotografía de un trabajo real de Lumis.
 
+
